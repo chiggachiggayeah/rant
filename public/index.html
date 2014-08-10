@@ -1,0 +1,28 @@
+<!docType html>
+<html ng-app="RantApp">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+
+<!--Scripts-->
+<script src='lib/angular/angular.min.js'></script>
+<script src='controllers/mainctrl.js'></script> <!--Not actually sure this is right-->
+<script src='app.js'></script>
+
+</head>
+<body ng-controller="MainController as mctrl">
+	<div>
+		<div ng-repeat="rant in rants" ng-click="deleteRant(rant._id)">
+			{{rant.title}}<br>
+			{{rant.content}}<br>
+			{{rant.author}}<br>
+			<hr>
+		</div>
+		<form>
+			<input type="text" ng-model="formData.title" placeholder="Title">
+			<textarea type="text" ng-model="formData.content" placeholder="Content"></textarea>
+			<input ng-model="formData.author" placeholder="Author"/>
+			<button type="submit" ng-click="timer()">Set</button>
+		</form>
+	</div>
+</body>
+</html>

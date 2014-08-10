@@ -1,13 +1,14 @@
 var mongoose = require('mongoose');
 
+var Topic = require('./topic');
+
 var RantSchema = new mongoose.Schema({
-	title: String,
+	title: { type: String, required: true }, 
 
-	author: String,
+	author: { type: String, required: true },
 	
-	content: String,
+	content: { type: String, required: true },
 
-	createdOn: Date
 });
 
 module.exports = mongoose.model('Rant', RantSchema);
